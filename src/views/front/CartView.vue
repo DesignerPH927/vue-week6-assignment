@@ -8,7 +8,8 @@
         <th></th>
         <th>品名</th>
         <th style="width: 200px;">數量/單位</th>
-        <th>單價</th>
+        <th class="text-center">單價</th>
+        <th class="text-center">小計</th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +24,7 @@
             v-if="cartItem.id === loadingItem"></i>                 
             x</button>
           </td>
-          <td>
+          <td >
             {{cartItem.product.title}}                  
           </td>
           <td>
@@ -39,7 +40,10 @@
                 {{cartItem.product.unit}}</span>
             </div>
           </td>
-          <td class="text-end">
+          <td class="text-center">
+            {{cartItem.product.price}}
+          </td>
+          <td class="text-center">
             {{cartItem.total}}
           </td>
         </tr>             
@@ -47,12 +51,12 @@
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="3" 
+        <td colspan="4" 
           class="text-end">總價</td>
         <td class="text-end">{{cart.total}}</td>
       </tr>
       <tr>
-        <td colspan="3"
+        <td colspan="4"
           class="text-success text-end">折扣價</td>
         <td class="text-end
           text-success">{{cart.final_total}}</td>
